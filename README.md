@@ -1,0 +1,2 @@
+# reshare-vufind-module
+Vufind Module for ReShare customizations. Includes record driver to add bibliographic and user IDs to OpenURLs. Copy the `ReShare` directory into vufind's modules dirctory and be sure the `VUFIND_LOCAL_MODULES` is set to "ReShare". See [VuFind's documentation](https://vufind.org/wiki/development:architecture:customizing_vufind) for more information on configuring custom modules.
