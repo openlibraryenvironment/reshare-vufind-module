@@ -4,6 +4,9 @@ namespace ReShare\RecordDriver;
 
 class SolrFolio extends \VuFind\RecordDriver\SolrDefault
 {
+
+    use \VuFind\RecordDriver\IlsAwareTrait;
+
     protected $tstPatron;	
 
     public function __construct($tstPatron = null)
