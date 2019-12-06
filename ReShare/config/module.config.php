@@ -7,6 +7,10 @@ return array (
     array (
       'recorddriver' => 
       array (
+	'delegators' =>
+	array (
+	  'ReShare\\RecordDriver\\SolrFolio' =>  array('VuFind\\RecordDriver\\IlsAwareDelegatorFactory'),
+	),
         'factories' => 
         array (
           'ReShare\\RecordDriver\\SolrFolio' => 'ReShare\\RecordDriver\\SolrFolioFactory',
