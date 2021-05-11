@@ -2,7 +2,7 @@
 
 namespace ReShare\RecordDriver;
 
-class SolrFolioFactory implements \Zend\ServiceManager\Factory\FactoryInterface
+class SolrFolioFactory implements \Laminas\ServiceManager\Factory\FactoryInterface
 {
 
     /**
