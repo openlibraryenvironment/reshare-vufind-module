@@ -1,25 +1,21 @@
 <?php
 
-return array (
-  'vufind' => 
-  array (
-    'plugin_managers' => 
-    array (
-      'recorddriver' => 
-      array (
-	'delegators' =>
-	array (
-	  'ReShare\\RecordDriver\\SolrFolio' =>  array('VuFind\\RecordDriver\\IlsAwareDelegatorFactory'),
-	),
-        'factories' => 
-        array (
+$config = [
+  'vufind' => [
+    'plugin_managers' => [
+      'recorddriver' => [
+        'delegators' => [
+          'ReShare\\RecordDriver\\SolrFolio' =>  ['VuFind\\RecordDriver\\IlsAwareDelegatorFactory'],
+        ],
+        'factories' => [
           'ReShare\\RecordDriver\\SolrFolio' => 'ReShare\\RecordDriver\\SolrFolioFactory',
-        ),
-        'aliases' => 
-        array (
+        ],
+        'aliases' => [
           'solrfolio' => 'ReShare\\RecordDriver\\SolrFolio',
-        ),
-      ),
-    ),
-  ),
-);
+        ],
+      ],
+    ],
+  ],
+];
+
+return $config;
