@@ -21,14 +21,13 @@ class SolrFolioFactory implements \Laminas\ServiceManager\Factory\FactoryInterfa
      */
     public function __invoke(\Interop\Container\ContainerInterface $container, $requestedName, array $options = null)
     {
-	$loggedInUser = $container->get(\VuFind\Auth\Manager::class)->isLoggedIn();
+        $loggedInUser = $container->get(\VuFind\Auth\Manager::class)->isLoggedIn();
 
-	if (isset($loggedInUser->username)) {
-	    $tstPatron = $loggedInUser->username;
-	} else {
-	    $tstPatron = null;
-	}
-
+        if (isset($loggedInUser->username)) {
+            $tstPatron = $loggedInUser->username;
+        } else {
+            $tstPatron = null;
+        }
         return new \ReShare\RecordDriver\SolrFolio($tstPatron);
     }
 }

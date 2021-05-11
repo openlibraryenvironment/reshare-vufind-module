@@ -22,7 +22,7 @@ class SolrFolio extends \VuFind\RecordDriver\SolrDefault
         // Start an array of OpenURL parameters:
         return [
             'req_id' => $this->tstPatron,
-	    'rft_id' => $this->getUniqueID(),
+	        'rft_id' => $this->getUniqueID(),
             'url_ver' => 'Z39.88-2004',
             'ctx_ver' => 'Z39.88-2004',
             'ctx_enc' => 'info:ofi/enc:UTF-8',
