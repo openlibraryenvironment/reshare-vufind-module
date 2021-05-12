@@ -7,11 +7,11 @@ class SolrFolio extends \VuFind\RecordDriver\SolrDefault
 
     use \VuFind\RecordDriver\IlsAwareTrait;
 
-    protected $tstPatron;	
+    protected $patronID;	
 
-    public function __construct($tstPatron = null)
+    public function __construct($patronID = null)
     {
-        $this->tstPatron = $tstPatron;
+        $this->patronID = $patronID;
     }
 
     public function getDefaultOpenUrlParams()
@@ -21,8 +21,8 @@ class SolrFolio extends \VuFind\RecordDriver\SolrDefault
         $pubDate = empty($pubDate) ? '' : $pubDate[0];
         // Start an array of OpenURL parameters:
         return [
-            'req_id' => $this->tstPatron,
-	    'rft_id' => $this->getUniqueID(),
+            'req_id' => $this->patronID,
+	        'rft_id' => $this->getUniqueID(),
             'url_ver' => 'Z39.88-2004',
             'ctx_ver' => 'Z39.88-2004',
             'ctx_enc' => 'info:ofi/enc:UTF-8',

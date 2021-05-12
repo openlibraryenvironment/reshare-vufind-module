@@ -2,7 +2,7 @@
 
 namespace ReShare\RecordDriver;
 
-class SolrFolioFactory implements \Zend\ServiceManager\Factory\FactoryInterface
+class SolrFolioFactory implements \Laminas\ServiceManager\Factory\FactoryInterface
 {
 
     /**
@@ -21,15 +21,14 @@ class SolrFolioFactory implements \Zend\ServiceManager\Factory\FactoryInterface
      */
     public function __invoke(\Interop\Container\ContainerInterface $container, $requestedName, array $options = null)
     {
-	$loggedInUser = $container->get(\VuFind\Auth\Manager::class)->isLoggedIn();
+        $loggedInUser = $container->get(\VuFind\Auth\Manager::class)->isLoggedIn();
 
-	if (isset($loggedInUser->username)) {
-	    $tstPatron = $loggedInUser->username;
-	} else {
-	    $tstPatron = null;
-	}
-
-        return new \ReShare\RecordDriver\SolrFolio($tstPatron);
+        if (isset($loggedInUser->username)) {
+            $patronID = $loggedInUser->username;
+        } else {
+            $patronID = null;
+        }
+        return new \ReShare\RecordDriver\SolrFolio($patronID);
     }
 }
 
