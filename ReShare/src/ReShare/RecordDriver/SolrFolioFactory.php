@@ -24,11 +24,11 @@ class SolrFolioFactory implements \Laminas\ServiceManager\Factory\FactoryInterfa
         $loggedInUser = $container->get(\VuFind\Auth\Manager::class)->isLoggedIn();
 
         if (isset($loggedInUser->username)) {
-            $tstPatron = $loggedInUser->username;
+            $patronID = $loggedInUser->username;
         } else {
-            $tstPatron = null;
+            $patronID = null;
         }
-        return new \ReShare\RecordDriver\SolrFolio($tstPatron);
+        return new \ReShare\RecordDriver\SolrFolio($patronID);
     }
 }
 
